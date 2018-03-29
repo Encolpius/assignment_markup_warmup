@@ -3,3 +3,157 @@
 *:after {
   box-sizing: border-box;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/*
+============================
+Typography
+============================
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+h2 {
+  font-style: italic;
+}
+
+/*
+============================
+Navbar
+============================
+*/
+
+nav {
+  padding: 16px 8px;
+  background-color: #FFE599;
+  border-bottom: 3px solid black;
+}
+
+/*
+============================
+Grid
+============================
+*/
+
+.blog {
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-areas:
+    ". a a h h h h h h ."
+    ". a a p p p p p p ."
+    ". a a p p p p p p ."
+    ". . . f f f f f f .";
+  margin-top: 8px;
+}
+
+.ad {
+  grid-area: a;
+  border: 1px solid black;
+  background-color: #D5A6BD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  grid-area: h;
+  border: 1px solid black;
+  height: 100px;
+  background-color: #B6D7A8;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.posts {
+  grid-area: p;
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  grid-gap: 3px;
+}
+
+.post {
+  border: 1px solid black;
+  background-color: #A2C4C9;
+  padding: 5px;
+}
+
+.footer {
+  grid-area: f;
+  background-color: #9FC5F8;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.ad > * {
+  margin: 7px;
+}
+/*
+============================
+Other
+============================
+*/
+
+.strong {
+  font-weight: 700;
+}
+
+.post h2 {
+  margin-top: 12px;
+}
+
+.ad-pic {
+  border: 1px solid black;
+  width: 90%;
+  height: 35%;
+  background-color: #ccc;
+}
+
+@media all and (max-width: 990px) {
+
+  .blog {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .blog > * {
+    margin: 4px;
+  }
+
+  .ad {
+    display: none;
+  }
+
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .post {
+    margin: 4px;
+    flex-basis: 33.33%;
+    flex-grow: 1;
+  }
+
+}
